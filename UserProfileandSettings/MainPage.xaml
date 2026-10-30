@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UserProfileandSettings.MainPage"
+             BackgroundColor="#F3F4F6">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="User Profile &amp; Settings"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#1F2937" />
+
+            <Border Stroke="#E5E7EB"
+                    StrokeShape="RoundRectangle 16"
+                    BackgroundColor="White"
+                    Padding="16">
+                <HorizontalStackLayout Spacing="12">
+
+                    <Border StrokeShape="RoundRectangle 25"
+                            Stroke="Transparent"
+                            HeightRequest="50"
+                            WidthRequest="50"
+                            Padding="0">
+                        <Image Source="avatar.svg"
+                               HeightRequest="50"
+                               WidthRequest="50"
+                               Aspect="AspectFill" />
+                    </Border>
+
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="2">
+                        <Label Text="Jane Doe" FontAttributes="Bold" FontSize="16" TextColor="Black" />
+                        <Label Text="jane.doe@example.com" FontSize="13" TextColor="Black" />
+                    </VerticalStackLayout>
+
+                </HorizontalStackLayout>
+            </Border>
+
+            <VerticalStackLayout Spacing="14">
+
+                <Label Text="Edit Profile" FontAttributes="Bold" FontSize="16" TextColor="#111827" />
+
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Display Name" FontSize="12" TextColor="Black" />
+                    <Entry x:Name="DisplayNameEntry"
+                           Text="Jane Doe"
+                           PlaceholderColor="#9CA3AF" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Bio" FontSize="12" TextColor="Black" />
+                    <Editor x:Name="BioEditor"
+                            Text="Mobile developer and .NET enthusiast."
+                            AutoSize="TextChanges"
+                            HeightRequest="80" />
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+            <Button Text="Save Changes"
+                    BackgroundColor="#4C2DDB"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="48"
+                    Clicked="OnSaveChangesClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
